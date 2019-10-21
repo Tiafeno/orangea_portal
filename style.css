@@ -1,0 +1,170 @@
+.slider {
+    width: 100%;
+    height: 100vh;
+    display: block;
+    transition: background 1.5s linear;
+    -webkit-transition: background 1.5s linear;
+}
+
+.container {
+    height: calc(50% - 100px);
+    width: 50%;
+    position: absolute;
+    left: 25%;
+    z-index: 99;
+    top: 15%;
+}
+
+.link-img {
+    transition: all 1.5s linear;
+    -webkit-transition: all 1.5s linear;
+}
+
+.link-img:hover {
+    position: relative;
+    top: -10px;
+    display: block;
+}
+
+.container-bg {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.57);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 2;
+}
+
+.orangea-subtitle {
+    font-family: Montserrat;
+    font-size: 18px;
+    letter-spacing: 3px;
+    color: #FFFFFF;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.orangea-title {
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 50px;
+    letter-spacing: -2.87px;
+    color: #FFFFFF;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-bottom: 0;
+    line-height: 0.8;
+    word-wrap: normal;
+    word-break: inherit;
+}
+
+.weight-800 {
+    font-family: Montserrat;
+    font-weight: 800;
+    width: 245px;
+    font-size: 3.2rem;
+    color: white;
+    text-align: center;
+    display: block;
+    line-height: 0.8;
+    margin: auto;
+}
+
+.weight-400 {
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    display: block;
+    line-height: 0.9;
+    letter-spacing: 4px;
+}
+
+.slogan {
+    position: relative;
+}
+
+.slogan::before {
+    content: '';
+    width: 10%;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    top: -15%;
+    left: 46%;
+    display: none;
+}
+
+.preload-backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background-color: rgb(255, 255, 255);
+}
+
+.preload-body {
+    overflow-y: hidden;
+}
+
+.page-preload {
+    background: transparent url(https://cdn.dribbble.com/users/107759/screenshots/2436386/copper-loader.gif) no-repeat center center;
+    position: fixed;
+    z-index: 1000;
+    height: 100vh;
+    width: 100%;
+}
+
+@media (max-width: 1030px) {
+    .weight-800 {
+        font-size: 2rem;
+    }
+
+    .weight-400 {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 650px) {
+    .slogan::before {
+        top: -25%;
+    }
+
+    .weight-800 {
+        font-size: 25px;
+        width: 121px;
+        margin: auto;
+
+    }
+
+    .weight-400 {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 575px) {
+    .slogan::before {
+        display: block;
+    }
+}
+
+@media (max-width: 550px) {
+    .orangea-title {
+        font-size: 2.5rem;
+    }
+
+    .orangea-subtitle {
+        font-size: 13px;
+        margin-top: 10px;
+    }
+
+    .link-img img {
+        margin-bottom: 10px;
+        width: 250px;
+    }
+
+
+}

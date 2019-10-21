@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <!-- head -->
+    <meta charset="utf-8">
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="width=550" />
+    <meta name="description" content="Animate carousel">
+    <meta name="author" content="David Deutsch">
+    <title>
+        Welcome to Orangea - Nosy Be - Madagascar
+    </title>
+
+    <!-- Stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,800&display=swap" rel="stylesheet"
+        type='text/css'>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/docs.theme.min.css">
+
+    <!-- Owl Stylesheets -->
+    <link rel="stylesheet" href="assets/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/owlcarousel/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Media social -->
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:description"
+        content="The Orangea Hotel property covers approximately 17,000 square meters, hidden in a lush tropical garden consisting of hundreds of plants and flowers." />
+    <meta name="twitter:title" content="Orangea Hotels on the west coast of Nosy Be - Madagascar" />
+    <meta name="twitter:image" content="assets/img/slider/1.jpg" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="ico/favicon.ico">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="ico/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="ico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Yeah i know js should not be in header. Its required for demos.-->
+
+    <!-- javascript -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="assets/vendors/jquery.min.js"></script>
+    <script src="assets/vendors/lodash.min.js"></script>
+    <script src="assets/owlcarousel/owl.carousel.js"></script>
+</head>
+
+<body>
+
+    <div class="preload-backdrop">
+        <div class="page-preload">
+        </div>
+    </div>
+
+    <!--  Demos -->
+    <section id="demos" style="height: calc(100% - 0px)">
+
+        <div class="fadeOut slider">
+            <div class="container-bg">
+
+            </div>
+            <div class="pt-4" style="position: relative; z-index: 10">
+                <div class="row">
+                    <div class="col-12 d-flex mb-2">
+                        <img src="assets/img/tongasoa.svg" class="img-fluid m-auto" width="500">
+                    </div>
+                    <!-- <div class="col-12">
+                                <p class="orangea-title">Bienvenu à Orangea</p>
+                            </div> -->
+                    <div class="col-12">
+                        <p class="orangea-subtitle">Benvenuti | Bienvenue | Welcome</p>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 40px">
+                    <div class="col-sm-6">
+                        <div class="text-center">
+                            <a href="https://beachresort.orangea-hotel.com/" target="_parent"
+                                title="Orangea Beach Resort" class="link-img">
+                                <img src="assets/img/beach_resort.svg" class="img-fluid" width="400">
+                            </a>
+                            <div class="slogan">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="text-center">
+                            <a href="https://village.orangea-hotel.com/" target="_parent" title="Orangea Village"
+                                class="link-img">
+                                <img src="assets/img/logo_village.svg" class="img-fluid" width="400">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <script type="text/babel">
+            (function ($) {
+                setLoading(false);
+                let backgrounds = [];
+                const toDataURL = (imageUrl) => {
+                    return new Promise((resolve, reject) => {
+                        var xhr = new XMLHttpRequest();
+                        xhr.onload = function () {
+                            var reader = new FileReader();
+                            reader.onloadend = function () {
+                                resolve(reader.result);
+                            }
+                            reader.readAsDataURL(xhr.response);
+                        };
+                        xhr.open('GET', imageUrl);
+                        xhr.responseType = 'blob';
+                        xhr.send();
+                    });
+                };
+
+                $(document).ready(() => {
+                    setLoading(true);
+                    const slider = $('.slider');
+                    const images = [
+                        'assets/img/slider/3.jpg',
+                        'assets/img/slider/1.jpg',
+                        'assets/img/slider/2.jpg',
+                        'assets/img/slider/6.jpg',
+                        'assets/img/slider/4.jpg',
+                        'assets/img/slider/5.jpg',
+                        'assets/img/slider/7.jpg',
+                        'assets/img/slider/8.jpg',
+                    ];
+                    const initialize = () => {
+                        _.forEach(images, (img) => {
+                            // Convertir les images en BASE64
+                            toDataURL(img).then(function successCallback(result) {
+                                backgrounds.push(result);
+                            });
+                        });
+                    };
+                    let position = 0;
+                    setInterval(() => {
+                        if (_.isEmpty(backgrounds)) return false;
+                        setLoading(false);
+                        const url = backgrounds[position];
+                        slider.css({
+                            'background': `transparent url(${url}) no-repeat center center`,
+                            'background-size': 'cover'
+                        });
+                        position++;
+                        if (position >= backgrounds.length) position = 0;
+                    }, 3000);
+
+
+                    $(window).resize(() => {
+                        fixBgResponsive();
+                    });
+                    fixBgResponsive();
+                    initialize(); // Initialiser le chargement des images
+                });
+
+                function setLoading(value) {
+                    const preload = $('.preload-backdrop');
+                    if (value) {
+                        $('body').addClass('preload-body');
+                        preload.css({
+                            display: 'block'
+                        });
+                    } else {
+                        $('body').removeClass('preload-body');
+                        preload.css({
+                            display: 'none'
+                        });
+                    }
+                }
+
+                function fixBgResponsive() {
+                    const imgs = $('.owl-item').find('img');
+                    const items = $('.owl-item').find('.item');
+                    const height = $(window).innerHeight();
+                    const width = $(window).innerWidth();
+                    imgs.each((index, el) => {
+                        var imgWidth;
+                        var imgHeight;
+
+                        var img = new Image();
+                        img.onload = () => {
+                            imgHeight = this.height;
+                            imgWidth = this.width;
+                            var widthFinal = (height * imgWidth) / imgHeight;
+                            if (imgWidth < width) {
+                                $(el).width(widthFinal);
+                            } else {
+                                $(el).width(widthFinal);
+                            }
+
+                            if (widthFinal < width) {
+                                widthFinal = width;
+                                $(el).width(widthFinal);
+                            }
+
+                            items.each((index, itemEl) => {
+                                $(itemEl).css('width', widthFinal);
+                            });
+                        }
+                        img.src = $(el).attr('src');
+                    });
+                }
+            })(jQuery);
+
+        </script>
+    </section>
+
+    <!-- vendors -->
+    <script src="assets/vendors/highlight.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>
